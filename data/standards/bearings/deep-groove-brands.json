@@ -1,0 +1,205 @@
+{
+  "type": "deep-groove",
+  "description_zh": "深沟球轴承 (多品牌对比)",
+  "description_en": "Deep Groove Ball Bearings - Multi-brand Comparison",
+  "bearings": [
+    {
+      "designation": "6005",
+      "brands": {
+        "SKF": "6005",
+        "NSK": "6005",
+        "FAG": "6005",
+        "NTN": "6005",
+        "KOYO": "6005"
+      },
+      "d": 25,
+      "D": 47,
+      "B": 12,
+      "C_r": 11.9,
+      "C_0r": 6.55,
+      "speed_limit_grease": 15000,
+      "speed_limit_oil": 18000,
+      "mass": 0.08
+    },
+    {
+      "designation": "6205",
+      "brands": {
+        "SKF": "6205",
+        "NSK": "6205",
+        "FAG": "6205",
+        "NTN": "6205",
+        "KOYO": "6205"
+      },
+      "d": 25,
+      "D": 52,
+      "B": 15,
+      "C_r": 14.0,
+      "C_0r": 7.85,
+      "speed_limit_grease": 12000,
+      "speed_limit_oil": 15000,
+      "mass": 0.128
+    },
+    {
+      "designation": "6305",
+      "brands": {
+        "SKF": "6305",
+        "NSK": "6305",
+        "FAG": "6305",
+        "NTN": "6305",
+        "KOYO": "6305"
+      },
+      "d": 25,
+      "D": 62,
+      "B": 17,
+      "C_r": 22.5,
+      "C_0r": 11.6,
+      "speed_limit_grease": 10000,
+      "speed_limit_oil": 13000,
+      "mass": 0.232
+    },
+    {
+      "designation": "6006",
+      "brands": {
+        "SKF": "6006",
+        "NSK": "6006",
+        "FAG": "6006"
+      },
+      "d": 30,
+      "D": 55,
+      "B": 13,
+      "C_r": 13.2,
+      "C_0r": 8.3,
+      "speed_limit_grease": 12000,
+      "speed_limit_oil": 15000,
+      "mass": 0.116
+    },
+    {
+      "designation": "6206",
+      "brands": {
+        "SKF": "6206",
+        "NSK": "6206",
+        "FAG": "6206"
+      },
+      "d": 30,
+      "D": 62,
+      "B": 16,
+      "C_r": 19.5,
+      "C_0r": 11.3,
+      "speed_limit_grease": 10000,
+      "speed_limit_oil": 13000,
+      "mass": 0.199
+    },
+    {
+      "designation": "6306",
+      "brands": {
+        "SKF": "6306",
+        "NSK": "6306",
+        "FAG": "6306"
+      },
+      "d": 30,
+      "D": 72,
+      "B": 19,
+      "C_r": 28.5,
+      "C_0r": 14.8,
+      "speed_limit_grease": 9000,
+      "speed_limit_oil": 11000,
+      "mass": 0.35
+    },
+    {
+      "designation": "6008",
+      "brands": {
+        "SKF": "6008",
+        "NSK": "6008",
+        "FAG": "6008"
+      },
+      "d": 40,
+      "D": 68,
+      "B": 15,
+      "C_r": 16.8,
+      "C_0r": 11.2,
+      "speed_limit_grease": 9500,
+      "speed_limit_oil": 12000,
+      "mass": 0.19
+    },
+    {
+      "designation": "6208",
+      "brands": {
+        "SKF": "6208",
+        "NSK": "6208",
+        "FAG": "6208"
+      },
+      "d": 40,
+      "D": 80,
+      "B": 18,
+      "C_r": 29.1,
+      "C_0r": 17.8,
+      "speed_limit_grease": 8000,
+      "speed_limit_oil": 10000,
+      "mass": 0.37
+    },
+    {
+      "designation": "6308",
+      "brands": {
+        "SKF": "6308",
+        "NSK": "6308",
+        "FAG": "6308"
+      },
+      "d": 40,
+      "D": 90,
+      "B": 23,
+      "C_r": 40.5,
+      "C_0r": 24.0,
+      "speed_limit_grease": 7000,
+      "speed_limit_oil": 8500,
+      "mass": 0.63
+    },
+    {
+      "designation": "6010",
+      "brands": {
+        "SKF": "6010",
+        "NSK": "6010",
+        "FAG": "6010"
+      },
+      "d": 50,
+      "D": 80,
+      "B": 16,
+      "C_r": 21.2,
+      "C_0r": 14.6,
+      "speed_limit_grease": 8000,
+      "speed_limit_oil": 10000,
+      "mass": 0.29
+    },
+    {
+      "designation": "6210",
+      "brands": {
+        "SKF": "6210",
+        "NSK": "6210",
+        "FAG": "6210"
+      },
+      "d": 50,
+      "D": 90,
+      "B": 20,
+      "C_r": 35.1,
+      "C_0r": 23.2,
+      "speed_limit_grease": 7000,
+      "speed_limit_oil": 8500,
+      "mass": 0.46
+    },
+    {
+      "designation": "6310",
+      "brands": {
+        "SKF": "6310",
+        "NSK": "6310",
+        "FAG": "6310"
+      },
+      "d": 50,
+      "D": 110,
+      "B": 27,
+      "C_r": 61.8,
+      "C_0r": 38.0,
+      "speed_limit_grease": 6000,
+      "speed_limit_oil": 7500,
+      "mass": 1.07
+    }
+  ]
+}

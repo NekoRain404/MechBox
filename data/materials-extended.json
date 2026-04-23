@@ -1,0 +1,226 @@
+{
+  "structural_steels": [
+    {
+      "designation": "Q235B",
+      "name_zh": "碳素结构钢 Q235B",
+      "name_en": "Carbon Structural Steel Q235B",
+      "standards": ["GB/T 700"],
+      "standard_ref": "GB/T 700-2006",
+      "condition": "as_rolled",
+      "equivalents": {
+        "ASTM": "A36 (近似)",
+        "DIN": "St37-2",
+        "JIS": "SS400"
+      },
+      "density": 7.85,
+      "E": 206000,
+      "G": 79000,
+      "yield_strength": 235,
+      "tensile_strength": 370,
+      "elongation": 26,
+      "temp_min": -20,
+      "temp_max": 400,
+      "hardness_brinell": 120,
+      "applications": ["一般结构", "焊接结构", "螺栓", "法兰"],
+      "notes": "最常用的普通结构钢，良好的焊接性和塑性",
+      "sn_curve": {
+        "endurance_limit": 150,
+        "cycles_at_limit": 1000000,
+        "slope_exponent": 5
+      }
+    },
+    {
+      "designation": "45#",
+      "name_zh": "优质碳素结构钢 45#",
+      "name_en": "Quality Carbon Structural Steel 45#",
+      "standards": ["GB/T 699"],
+      "equivalents": {
+        "ASTM": "1045",
+        "DIN": "C45",
+        "JIS": "S45C"
+      },
+      "density": 7.85,
+      "E": 206000,
+      "G": 79000,
+      "yield_strength": 355,
+      "tensile_strength": 600,
+      "elongation": 16,
+      "temp_min": -20,
+      "temp_max": 450,
+      "hardness_brinell": 200,
+      "applications": ["轴类", "齿轮", "高强度结构件", "连杆"],
+      "notes": "调质处理后综合力学性能好",
+      "sn_curve": {
+        "endurance_limit": 280,
+        "cycles_at_limit": 1000000,
+        "slope_exponent": 7
+      }
+    },
+    {
+      "designation": "40Cr",
+      "name_zh": "合金结构钢 40Cr",
+      "name_en": "Alloy Structural Steel 40Cr",
+      "standards": ["GB/T 3077"],
+      "equivalents": {
+        "ASTM": "5140",
+        "DIN": "41Cr4",
+        "JIS": "SCr440"
+      },
+      "density": 7.85,
+      "E": 206000,
+      "G": 79000,
+      "yield_strength": 785,
+      "tensile_strength": 980,
+      "elongation": 9,
+      "temp_min": -20,
+      "temp_max": 500,
+      "hardness_brinell": 280,
+      "applications": ["重载轴", "齿轮", "重要零件", "高强度螺栓"],
+      "notes": "合金结构钢，淬透性好，强度高",
+      "sn_curve": {
+        "endurance_limit": 420,
+        "cycles_at_limit": 1000000,
+        "slope_exponent": 9
+      }
+    }
+  ],
+  "stainless_steels": [
+    {
+      "designation": "304",
+      "name_zh": "奥氏体不锈钢 304",
+      "name_en": "Austenitic Stainless Steel 304",
+      "standards": ["GB/T 20878"],
+      "equivalents": {
+        "ASTM": "304",
+        "DIN": "1.4301",
+        "JIS": "SUS304"
+      },
+      "density": 7.93,
+      "E": 193000,
+      "G": 73000,
+      "yield_strength": 205,
+      "tensile_strength": 515,
+      "elongation": 40,
+      "temp_min": -196,
+      "temp_max": 800,
+      "hardness_brinell": 150,
+      "applications": ["食品设备", "化工设备", "医疗器械", "装饰"],
+      "notes": "最常用的不锈钢，耐腐蚀性好",
+      "sn_curve": {
+        "endurance_limit": 180,
+        "cycles_at_limit": 1000000,
+        "slope_exponent": 6
+      }
+    },
+    {
+      "designation": "316L",
+      "name_zh": "奥氏体不锈钢 316L",
+      "name_en": "Austenitic Stainless Steel 316L",
+      "standards": ["GB/T 20878"],
+      "equivalents": {
+        "ASTM": "316L",
+        "DIN": "1.4404",
+        "JIS": "SUS316L"
+      },
+      "density": 7.98,
+      "E": 193000,
+      "G": 73000,
+      "yield_strength": 170,
+      "tensile_strength": 485,
+      "elongation": 40,
+      "temp_min": -196,
+      "temp_max": 800,
+      "hardness_brinell": 140,
+      "applications": ["海洋环境", "化工设备", "医疗器械"],
+      "notes": "含Mo，耐点蚀性能优于304",
+      "sn_curve": {
+        "endurance_limit": 160,
+        "cycles_at_limit": 1000000,
+        "slope_exponent": 6
+      }
+    }
+  ],
+  "aluminum_alloys": [
+    {
+      "designation": "6061-T6",
+      "name_zh": "铝合金 6061-T6",
+      "name_en": "Aluminum Alloy 6061-T6",
+      "standards": ["GB/T 3190"],
+      "equivalents": {
+        "ASTM": "6061-T6",
+        "DIN": "AlMgSi1Cu-T6",
+        "JIS": "A6061-T6"
+      },
+      "density": 2.70,
+      "E": 68900,
+      "G": 26000,
+      "yield_strength": 276,
+      "tensile_strength": 310,
+      "elongation": 12,
+      "temp_min": -50,
+      "temp_max": 150,
+      "hardness_brinell": 95,
+      "applications": ["航空航天", "汽车零件", "自行车架", "一般结构"],
+      "notes": "最常用的铝合金，良好的综合性能",
+      "sn_curve": {
+        "endurance_limit": 97,
+        "cycles_at_limit": 500000000,
+        "slope_exponent": 10
+      }
+    }
+  ],
+  "copper_alloys": [
+    {
+      "designation": "H62",
+      "name_zh": "黄铜 H62",
+      "name_en": "Brass H62",
+      "standards": ["GB/T 5231"],
+      "equivalents": {
+        "ASTM": "C27000",
+        "DIN": "CuZn37",
+        "JIS": "C2720"
+      },
+      "density": 8.50,
+      "E": 100000,
+      "G": 40000,
+      "yield_strength": 160,
+      "tensile_strength": 340,
+      "elongation": 45,
+      "temp_min": -50,
+      "temp_max": 200,
+      "hardness_brinell": 80,
+      "applications": ["垫圈", "弹簧", "散热器", "阀门零件"],
+      "notes": "常用黄铜，良好的加工性和耐蚀性",
+      "sn_curve": {
+        "endurance_limit": 110,
+        "cycles_at_limit": 100000000,
+        "slope_exponent": 8
+      }
+    }
+  ],
+  "cast_irons": [
+    {
+      "designation": "HT250",
+      "name_zh": "灰铸铁 HT250",
+      "name_en": "Gray Cast Iron HT250",
+      "standards": ["GB/T 9439"],
+      "equivalents": {
+        "ASTM": "Class 35",
+        "DIN": "GG-25",
+        "JIS": "FC250"
+      },
+      "density": 7.20,
+      "E": 110000,
+      "G": 44000,
+      "yield_strength": 250,
+      "tensile_strength": 250,
+      "elongation": 0.5,
+      "temp_min": -20,
+      "temp_max": 300,
+      "hardness_brinell": 200,
+      "applications": ["机床床身", "气缸", "减速器壳体", "底座"],
+      "notes": "铸造性能好，减振性好，但塑性差",
+      "sn_curve": null
+    }
+  ]
+}

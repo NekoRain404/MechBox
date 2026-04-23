@@ -1,0 +1,187 @@
+{
+  "name": "mechbox",
+  "version": "0.1.0-preview.2",
+  "description": "Mechanical Engineering Design Toolbox",
+  "license": "GPL-3.0-only",
+  "main": "./out/main/index.js",
+  "author": "NekoRain",
+  "packageManager": "npm@11.12.1",
+  "scripts": {
+    "db:init": "python3 scripts/init_v3_db.py",
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "test": "vitest",
+    "lint": "vue-tsc --noEmit",
+    "postinstall": "electron-builder install-app-deps",
+    "release:preflight": "node scripts/release/preflight.mjs",
+    "release:preflight:linux": "node scripts/release/preflight.mjs --profile=linux-preview",
+    "release:repo:audit": "node scripts/release/repo-audit.mjs",
+    "release:source:check": "node scripts/release/source-archive-check.mjs",
+    "release:version:check": "node scripts/release/verify-version-consistency.mjs",
+    "release:audit": "npm audit --omit=dev",
+    "release:verify:checks": "npm run lint && npm test -- --run",
+    "release:verify": "npm run release:verify:checks && npm run build",
+    "release:clean": "bash scripts/release/clean-release.sh",
+    "release:checksums": "bash scripts/release/generate-checksums.sh",
+    "release:manifest": "node scripts/release/generate-manifest.mjs",
+    "release:manifest:linux": "node scripts/release/generate-manifest.mjs --profile=linux-preview",
+    "release:notes": "node scripts/release/generate-release-notes.mjs",
+    "release:notes:linux": "node scripts/release/generate-release-notes.mjs --profile=linux-preview",
+    "release:github:draft": "node scripts/release/generate-github-release-draft.mjs",
+    "release:verify:assets": "node scripts/release/verify-release-assets.mjs",
+    "release:verify:linux-packages": "bash scripts/release/verify-linux-packages.sh",
+    "release:smoke:linux": "bash scripts/release/smoke-linux-appimage.sh",
+    "release:ready:check": "node scripts/release/verify-release-readiness.mjs",
+    "release:ready:pretag": "node scripts/release/verify-release-readiness.mjs --allow-dirty --skip-tag",
+    "release:acceptance:linux": "npm run release:repo:audit && npm run release:source:check && npm run release:version:check && npm run release:audit && npm run release:preflight:linux && npm run release:verify:checks && npm run dist:preview:linux && npm run release:verify:assets && npm run release:verify:linux-packages && npm run release:smoke:linux",
+    "release:acceptance:linux:ci": "APPIMAGE_EXTRACT_AND_RUN=1 SMOKE_USE_XVFB=1 SMOKE_TIMEOUT_SEC=40 SMOKE_SECOND_TIMEOUT_SEC=12 npm run release:acceptance:linux",
+    "dist:preview": "npm run release:clean && npm run dist:win && npm run dist:linux && npm run release:checksums && npm run release:manifest && npm run release:notes",
+    "dist:preview:linux": "npm run release:clean && npm run dist:linux && npm run release:checksums && npm run release:manifest:linux && npm run release:notes:linux && npm run release:github:draft",
+    "rust:build": "cd rust-core && cargo build --release && cp target/release/libmechbox_core.* ../out/native/",
+    "rust:debug": "cd rust-core && cargo build",
+    "dist:win": "npm run build && electron-builder --win --publish never",
+    "dist:linux": "npm run build && electron-builder --linux --publish never",
+    "dist:mac": "npm run build && electron-builder --mac --publish never",
+    "dist:all": "npm run build && electron-builder --win --linux --mac --publish never"
+  },
+  "build": {
+    "appId": "com.mechbox.app",
+    "productName": "MechBox",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "out/**/*",
+      "resources/**/*",
+      "data/**/*",
+      "DOC/schema_v3.sql",
+      "DOC/seed_sources_v3.sql",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "data",
+        "to": "data",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "DOC",
+        "to": "DOC",
+        "filter": [
+          "schema_v3.sql",
+          "seed_sources_v3.sql"
+        ]
+      }
+    ],
+    "win": {
+      "icon": "resources/icons/app/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "icon": "resources/icons/app/icon.png",
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "deb",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "category": "Development",
+      "maintainer": "NekoRain",
+      "synopsis": "Mechanical Engineering Design Toolbox"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
+      "category": "public.app-category.developer-tools"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "installerIcon": "resources/icons/app/icon.ico",
+      "uninstallerIcon": "resources/icons/app/icon.ico",
+      "installerHeaderIcon": "resources/icons/app/icon.ico"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "@ant-design/icons-vue": "7.0.1",
+    "ajv": "8.18.0",
+    "ant-design-vue": "4.2.6",
+    "better-sqlite3": "12.8.0",
+    "echarts": "6.0.0",
+    "html2canvas": "1.4.1",
+    "jspdf": "4.2.1",
+    "pinia": "3.0.4",
+    "three": "0.183.2",
+    "vue": "3.5.32",
+    "vue-router": "5.0.4",
+    "ws": "8.20.0"
+  },
+  "devDependencies": {
+    "@electron-toolkit/utils": "4.0.0",
+    "@napi-rs/cli": "3.6.1",
+    "@types/better-sqlite3": "7.6.13",
+    "@types/node": "25.6.0",
+    "@types/three": "0.183.1",
+    "@types/ws": "8.18.1",
+    "@vitejs/plugin-vue": "5.2.4",
+    "electron": "41.2.0",
+    "electron-builder": "26.8.1",
+    "electron-vite": "5.0.0",
+    "typescript": "6.0.2",
+    "unplugin-vue-components": "32.0.0",
+    "vite": "6.4.2",
+    "vitest": "4.1.4",
+    "vue-tsc": "3.2.6"
+  },
+  "overrides": {
+    "dompurify": "3.4.1"
+  }
+}

@@ -1,0 +1,95 @@
+name: Linux Preview Release
+
+on:
+  push:
+    tags:
+      - 'v*-preview.*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  linux-preview:
+    name: Build And Publish Linux Preview
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '25'
+          cache: npm
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            binutils \
+            coreutils \
+            iproute2 \
+            libarchive-tools \
+            libasound2t64 \
+            libatk-bridge2.0-0 \
+            libatk1.0-0 \
+            libatspi2.0-0 \
+            libcups2 \
+            libgtk-3-0 \
+            libnotify4 \
+            libnss3 \
+            libsecret-1-0 \
+            libxss1 \
+            libxtst6 \
+            python3 \
+            ripgrep \
+            xdg-utils \
+            xvfb
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Build and validate Linux preview
+        run: npm run release:acceptance:linux:ci
+
+      - name: Verify release readiness
+        run: |
+          if [[ "${GITHUB_REF_TYPE}" == "tag" ]]; then
+            npm run release:ready:check
+          else
+            npm run release:ready:pretag
+          fi
+
+      - name: Upload workflow artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: mechbox-linux-preview
+          if-no-files-found: error
+          path: |
+            release/MechBox-*.AppImage
+            release/mechbox_*_amd64.deb
+            release/latest-linux.yml
+            release/SHA256SUMS.txt
+            release/release-manifest.json
+            release/RELEASE_NOTES.md
+            release/GITHUB_RELEASE.md
+
+      - name: Publish GitHub Release
+        if: github.ref_type == 'tag'
+        uses: softprops/action-gh-release@v2
+        with:
+          prerelease: true
+          overwrite_files: true
+          body_path: release/GITHUB_RELEASE.md
+          files: |
+            release/MechBox-*.AppImage
+            release/mechbox_*_amd64.deb
+            release/latest-linux.yml
+            release/SHA256SUMS.txt
+            release/release-manifest.json
+            release/RELEASE_NOTES.md

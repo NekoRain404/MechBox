@@ -1,0 +1,76 @@
+{
+  "standard": "ISO 4014",
+  "description": "Hexagon head bolts",
+  "bolts": [
+    {
+      "designation": "M5",
+      "d": 5,
+      "head_width_s": 8,
+      "head_height_k": 3.5,
+      "standard": "ISO 4014 / GB/T 5782"
+    },
+    {
+      "designation": "M6",
+      "d": 6,
+      "head_width_s": 10,
+      "head_height_k": 4,
+      "standard": "ISO 4014 / GB/T 5782"
+    },
+    {
+      "designation": "M8",
+      "d": 8,
+      "head_width_s": 13,
+      "head_height_k": 5.3,
+      "standard": "ISO 4014 / GB/T 5782"
+    },
+    {
+      "designation": "M10",
+      "d": 10,
+      "head_width_s": 16,
+      "head_height_k": 6.4,
+      "standard": "ISO 4014 / GB/T 5782"
+    },
+    {
+      "designation": "M12",
+      "d": 12,
+      "head_width_s": 18,
+      "head_height_k": 7.5,
+      "standard": "ISO 4014 / GB/T 5782"
+    },
+    {
+      "designation": "M16",
+      "d": 16,
+      "head_width_s": 24,
+      "head_height_k": 10,
+      "standard": "ISO 4014 / GB/T 5782"
+    },
+    {
+      "designation": "M20",
+      "d": 20,
+      "head_width_s": 30,
+      "head_height_k": 12.5,
+      "standard": "ISO 4014 / GB/T 5782"
+    },
+    {
+      "designation": "M24",
+      "d": 24,
+      "head_width_s": 36,
+      "head_height_k": 15,
+      "standard": "ISO 4014 / GB/T 5782"
+    },
+    {
+      "designation": "M30",
+      "d": 30,
+      "head_width_s": 46,
+      "head_height_k": 18.7,
+      "standard": "ISO 4014 / GB/T 5782"
+    },
+    {
+      "designation": "M36",
+      "d": 36,
+      "head_width_s": 55,
+      "head_height_k": 22.5,
+      "standard": "ISO 4014 / GB/T 5782"
+    }
+  ]
+}

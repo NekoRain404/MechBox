@@ -1,0 +1,12 @@
+release/ export-ignore
+.local/ export-ignore
+.qwen/ export-ignore
+node_modules/ export-ignore
+.npmrc export-ignore
+pnpm-lock.yaml export-ignore
+pnpm-workspace.yaml export-ignore
+electron-vite.config.ts export-ignore
+DOC/*.md export-ignore
+resources/templates/ export-ignore
+template-bearing.xlsx export-ignore
+*.log export-ignore

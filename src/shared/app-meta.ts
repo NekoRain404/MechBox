@@ -1,0 +1,11 @@
+export const APP_NAME = 'MechBox'
+export const APP_VERSION = '0.1.0-preview.2'
+export const APP_RELEASE_LABEL = '0.1 预览版'
+export const APP_RELEASE_DATE = '2026-04-23'
+export const APP_LICENSE_NAME = 'GNU General Public License v3.0'
+export const APP_LICENSE_SPDX = 'GPL-3.0-only'
+export const DEFAULT_PROJECT_VERSION = APP_VERSION
+export const FAVORITES_EXPORT_VERSION = APP_VERSION
+export const BOM_EXPORT_VERSION = APP_VERSION
+export const WORKSPACE_PACKAGE_FORMAT_VERSION = '1.1.0'
+export const RULESET_VERSION = 'GB-ISO-pack-2026.01'

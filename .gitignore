@@ -1,0 +1,89 @@
+# Package manager
+/node_modules/
+/.npm/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+
+# Build outputs
+/dist/
+/dist-electron/
+/out/
+/release/
+/coverage/
+/.nyc_output/
+*.tsbuildinfo
+*.asar
+*.zip
+*.dmg
+*.exe
+*.AppImage
+
+# Runtime / cache / temp
+*.log
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+*.pid
+*.pid.lock
+*.seed
+.eslintcache
+.stylelintcache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+.node_repl_history
+lib-cov
+*.tgz
+*.swp
+*.swo
+*.pyc
+__pycache__/
+exports/
+temp/
+tmp/
+init-tmp/
+
+# Environment
+.env
+.env.*
+
+# IDE / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Local tooling
+/.gemini/
+.geminiignore
+/.local/
+/.qwen/
+*.qwen
+
+# Local databases
+*.db
+*.db-shm
+*.db-wal
+/data/mechbox.db*
+
+# Rust / native
+/target/
+/rust-core/target/
+*.node
+npm/
+Cargo.lock
+
+# Mechanical export temp
+*.step
+*.stp
+
+# Repo publish scope: local docs and templates stay local by default
+/DOC/**/*.md
+/DOC/release/
+/resources/templates/

@@ -1,0 +1,61 @@
+{
+  "type": "deep-groove",
+  "description_zh": "深沟球轴承 (Deep Groove Ball Bearings)",
+  "bearings": [
+    {
+      "designation": "6005",
+      "d": 25,
+      "D": 47,
+      "B": 12,
+      "C_r": 11.9,
+      "C_0r": 6.55,
+      "speed_limit_grease": 15000,
+      "speed_limit_oil": 18000,
+      "mass": 0.08
+    },
+    {
+      "designation": "6205",
+      "d": 25,
+      "D": 52,
+      "B": 15,
+      "C_r": 14.0,
+      "C_0r": 7.85,
+      "speed_limit_grease": 12000,
+      "speed_limit_oil": 15000,
+      "mass": 0.128
+    },
+    {
+      "designation": "6305",
+      "d": 25,
+      "D": 62,
+      "B": 17,
+      "C_r": 22.5,
+      "C_0r": 11.6,
+      "speed_limit_grease": 10000,
+      "speed_limit_oil": 13000,
+      "mass": 0.232
+    },
+    {
+      "designation": "6006",
+      "d": 30,
+      "D": 55,
+      "B": 13,
+      "C_r": 13.2,
+      "C_0r": 8.3,
+      "speed_limit_grease": 12000,
+      "speed_limit_oil": 15000,
+      "mass": 0.116
+    },
+    {
+      "designation": "6206",
+      "d": 30,
+      "D": 62,
+      "B": 16,
+      "C_r": 19.5,
+      "C_0r": 11.3,
+      "speed_limit_grease": 10000,
+      "speed_limit_oil": 13000,
+      "mass": 0.199
+    }
+  ]
+}

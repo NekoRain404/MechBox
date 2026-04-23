@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Source And Build Checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '25'
+          cache: npm
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3 ripgrep libarchive-tools
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Audit repository and source archive
+        run: |
+          npm run release:repo:audit
+          npm run release:source:check
+
+      - name: Verify version and production dependencies
+        run: |
+          npm run release:version:check
+          npm run release:audit
+
+      - name: Typecheck, test, and build
+        run: npm run release:verify
